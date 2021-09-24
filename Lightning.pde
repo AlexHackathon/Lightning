@@ -38,7 +38,6 @@ void mouseClicked(){
       //If the round is ending
       playersAlive.get(currentPlayerIndex).endTurn();
       forest.reset();
-      //forest.drawForest();
       currentPlayerIndex += 1;
       if(currentPlayerIndex >= playersAlive.size()){
         currentPlayerIndex = 0;
@@ -129,16 +128,6 @@ class Forest {
     for(int i = 0; i < this.treeCount; i++){
       forest.add(new Tree((float)width/(2*this.treeCount) + i * (float)width/ this.treeCount, height, 10, 3));
     }
-    /*//Prevents two players in the same place
-    while (this.forest.get(playerIndex) instanceof Player){
-       playerIndex = (int)(Math.random() * this.forest.size());
-    }*/
-    //***********************************
-    //Player p = new Player((float)width/(2*this.forest.size()) + playerIndex * (float)width/ this.forest.size(), height, 5);
-    //playerList.add(p);
-    //playersAlive.add(p);
-    //***********************************
-    //this.forest.set(playerIndex, p);
     this.drawForest();
   }
   public void drawForest(){
@@ -181,12 +170,6 @@ class Forest {
     for(int i = 0; i < this.treeCount; i++){
       forest.add(new Tree((float)width/(2*this.treeCount) + i * (float)width/ this.treeCount, height, 10, 3));
     }
-    /*for(int i = 0; i < playerCount; i++){
-      int playerIndex = (int)(Math.random() * this.forest.size());
-      Player p = new Player((float)width/(2*this.forest.size()) + playerIndex * (float)width/ this.forest.size(), height, 5);
-      playerList.add(p);
-      this.forest.set(playerIndex, p);
-    }*/
   }
   public void placePlayer(Player player){
     int playerIndex = (int)(Math.random() * this.forest.size());
