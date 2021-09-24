@@ -139,8 +139,9 @@ class Forest {
   public void strikeForest(Player currPlayer){
     int randomIndex = (int)(Math.random() * this.forest.size());
     this.drawLightning(this.forest.get(randomIndex).getPos(), 400, 10,10);
+    System.out.println("Striking");
     if(this.forest.get(randomIndex) instanceof Player){
-    System.out.println("Striking a player");
+      System.out.println("Striking a player");
       currPlayer.alive = false;
     }    
     if(forest.size() == 0){
