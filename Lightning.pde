@@ -75,6 +75,7 @@ void mouseClicked(){
           } else{
             forest.placePlayer(playersAlive.get(currentPlayerIndex));
           }
+          System.out.println("Player died");
         }
       }
     }
