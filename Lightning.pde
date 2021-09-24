@@ -11,6 +11,10 @@ ArrayList<Player> playerList;
 ArrayList<Player> playersAlive;
 
 void setup(){
+  background(0.0,0);
+  stroke(255,255,255);
+  size(400,400);
+
   round = 1;
   totalRounds = 3;
   playerCount = 2;
@@ -27,10 +31,6 @@ void setup(){
   treeCount = 20;
   forest = new Forest(treeCount);
   forest.placePlayer(playersAlive.get(currentPlayerIndex));
- 
-  background(0.0,0);
-  stroke(255,255,255);
-  size(400,400);
 }
 void mouseClicked(){
   if(round <= totalRounds){
