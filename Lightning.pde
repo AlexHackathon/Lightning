@@ -49,6 +49,7 @@ void mouseClicked(){
       if(playersAlive.size() == 0 || round > totalRounds){
         round = 4;
       } else {
+        System.out.println("MouseClicked");
         playersAlive.get(currentPlayerIndex).addPoint();
         forest.strikeForest(playersAlive.get(currentPlayerIndex));
         if(playersAlive.get(currentPlayerIndex).alive){
