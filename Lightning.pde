@@ -63,7 +63,7 @@ void mouseClicked(){
             forest.placePlayer(playersAlive.get(currentPlayerIndex));
           }
         } else {
-          //System.out.println("Forest reset");
+          System.out.println("Forest reset");
           playersAlive.remove(currentPlayerIndex);
           forest.reset();
           currentPlayerIndex += 1;
