@@ -63,9 +63,9 @@ void mouseClicked(){
             forest.placePlayer(playersAlive.get(currentPlayerIndex));
           }
         } else {
-          System.out.println("Forest reset");
           playersAlive.remove(currentPlayerIndex);
           forest.reset();
+          //System.out.println("Forest reset");
           currentPlayerIndex += 1;
           if(currentPlayerIndex >= playersAlive.size()){
             currentPlayerIndex = 0;
@@ -140,11 +140,12 @@ class Forest {
   public void strikeForest(Player currPlayer){
     int randomIndex = (int)(Math.random() * this.forest.size());
     this.drawLightning(this.forest.get(randomIndex).getPos(), 400, 10,10);
-    System.out.println("Striking");
+    //System.out.println("Striking");
     if(this.forest.get(randomIndex) instanceof Player){
       //System.out.println("Striking a player");
       currPlayer.alive = false;
-    }    
+    }
+    //System.out.println();
     if(forest.size() == 0){
       this.reset();
       playerList.get(currentPlayerIndex).endTurn();
