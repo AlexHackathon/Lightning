@@ -141,7 +141,7 @@ class Forest {
     int randomIndex = (int)(Math.random() * this.forest.size());
     this.drawLightning(this.forest.get(randomIndex).getPos(), 400, 10,10);
     //System.out.println("Striking");
-    if(this.forest.get(randomIndex) instanceof Player){
+    if(this.forest.get(randomIndex).getType() == "Player"){
       //System.out.println("Striking a player");
       currPlayer.alive = false;
     }
@@ -193,6 +193,9 @@ class StrikeableObject{
   public float getPos(){
     return posX;
   }
+  public String getType(){
+    return "";
+  }
 }
 class Tree extends StrikeableObject{
   public float posX;
@@ -218,6 +221,9 @@ class Tree extends StrikeableObject{
   }  
   public float getPos(){
     return posX;
+  }
+  public String getType(){
+    return "Tree";
   }
 }
 class Player extends StrikeableObject{
@@ -253,5 +259,8 @@ class Player extends StrikeableObject{
   public void endTurn(){
     this.score += this.roundScore;
     this.roundScore = 0;
+  }
+  public String getType(){
+    return "Player";
   }
 }
